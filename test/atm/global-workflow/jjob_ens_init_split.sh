@@ -110,9 +110,9 @@ for imem in $(seq 1 $NMEM_ENS); do
     done
 done
 
-# Set lobsdiag_forenkf=.false. to run letkf as single observer and solver job
-# NOTE:  atmensanlinit creates input yaml for atmensanlletkf job
-cp $EXPDIR/config.base_lobsdiag_forenkf_false $EXPDIR/config.base
+# Set lobsdiag_forenkf=.true. to run letkf as separate observer and solver jobs
+# NOTE:  atmensanlinit creates input yaml for atmensanlobs and atmensanlsol jobs
+cp $EXPDIR/config.base_lobsdiag_forenkf_true $EXPDIR/config.base
 
 # Execute j-job
 if [[ $machine = 'HERA' || $machine = 'ORION' || $machine = 'HERCULES' ]]; then
